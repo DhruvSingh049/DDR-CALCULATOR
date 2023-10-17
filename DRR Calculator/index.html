@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DRR Calculator</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="container">
+    <h1>DRR Calculator</h1>
+    
+    <div class="date-selection">
+      <label for="start-date">Start Date:</label>
+      <input type="date" id="start-date" required><br>
+      
+      <label for="end-date">End Date:</label>
+      <input type="date" id="end-date" required><br>
+      
+      <label for="exclude-dates">Exclude Dates (comma-separated):</label>
+      <input type="text" id="exclude-dates"><br>
+    </div>
+    
+    <div class="date-info">
+      <p>Month: <span id="result-month"></span></p>
+      <p>Year: <span id="result-year"></span></p>
+      <p>No of Days: <span id="result-days"></span></p>
+    </div>
+    
+    <form id="lead-count-form">
+      <label for="lead-count">Number of Leads:</label>
+      <input type="number" id="lead-count" required><br>
+      
+      <label for="expected-lead-count">Expected Lead Count:</label>
+      <input type="number" id="expected-lead-count" disabled><br>
+      
+      <button type="button" id="calculate-drr-btn">Calculate DRR</button>
+      <button type="button" id="save-btn">Save</button>
+      <!-- Add a "Clear History" button -->
+      <button type="button" id="clear-history-btn">Clear History</button>
+
+    </form>
+  </div>
+  
+  <table id="history-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Month-Year</th>
+        <th>Dates Excluded</th>
+        <th>Number of Days</th>
+        <th>Lead Count</th>
+        <th>Expected DRR</th>
+        <th>Last Updated</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="history-table-body"></tbody>
+</table>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
